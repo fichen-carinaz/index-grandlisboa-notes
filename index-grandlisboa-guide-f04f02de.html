@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>简明指南 · 澳门新葡京</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Noto Sans SC', sans-serif;
+      background: linear-gradient(145deg, #f7e3cf 0%, #f5d6b8 30%, #edcba1 60%, #e6bc88 100%);
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 2rem 1.2rem;
+      line-height: 1.7;
+      color: #2d241b;
+    }
+
+    .card {
+      max-width: 880px;
+      width: 100%;
+      background: #fffcf9;
+      border-radius: 40px 40px 32px 32px;
+      box-shadow: 0 20px 40px -10px rgba(110, 60, 30, 0.25), 0 4px 12px rgba(0, 0, 0, 0.06);
+      padding: 2.8rem 2.5rem 3rem;
+      transition: all 0.2s ease;
+    }
+
+    @media (max-width: 600px) {
+      .card {
+        padding: 2rem 1.5rem 2.2rem;
+        border-radius: 28px;
+      }
+    }
+
+    h1 {
+      font-size: 2.4rem;
+      font-weight: 500;
+      letter-spacing: -0.02em;
+      color: #4f3523;
+      margin-bottom: 0.25rem;
+      display: inline-block;
+      border-bottom: 3px solid #dbb48b;
+      padding-bottom: 6px;
+    }
+
+    .subhead {
+      font-size: 1.05rem;
+      color: #7d5e44;
+      margin-top: 0.6rem;
+      margin-bottom: 1.8rem;
+      border-left: 4px solid #e7c5a2;
+      padding-left: 1rem;
+      font-weight: 350;
+    }
+
+    h2 {
+      font-size: 1.5rem;
+      font-weight: 450;
+      color: #57402e;
+      margin-top: 2.5rem;
+      margin-bottom: 0.75rem;
+      letter-spacing: -0.01em;
+    }
+
+    h2:first-of-type {
+      margin-top: 0.5rem;
+    }
+
+    p {
+      margin-bottom: 1.2rem;
+      color: #3d322a;
+    }
+
+    .highlight-box {
+      background: #faf0e6;
+      border-radius: 24px;
+      padding: 1.4rem 1.8rem;
+      margin: 2rem 0 1.8rem;
+      border: 1px solid #eddccd;
+      box-shadow: inset 0 1px 3px rgba(255, 255, 245, 0.6);
+    }
+
+    .highlight-box p:last-child {
+      margin-bottom: 0;
+    }
+
+    .feature-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.2rem 1.8rem;
+      margin: 1.8rem 0 1rem;
+    }
+
+    .feature-item {
+      background: #f9f2ea;
+      border-radius: 20px;
+      padding: 1.2rem 1.3rem;
+      border-left: 5px solid #cd9f75;
+      transition: background 0.2s;
+    }
+
+    .feature-item strong {
+      display: block;
+      font-weight: 550;
+      color: #4f3624;
+      font-size: 1.05rem;
+      margin-bottom: 0.2rem;
+    }
+
+    .feature-item span {
+      font-size: 0.95rem;
+      color: #5f4a39;
+    }
+
+    @media (max-width: 640px) {
+      .feature-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .tip-list {
+      list-style: none;
+      padding: 0;
+      margin: 1rem 0 1.5rem;
+    }
+
+    .tip-list li {
+      position: relative;
+      padding-left: 1.8rem;
+      margin-bottom: 0.7rem;
+      color: #3d3027;
+    }
+
+    .tip-list li::before {
+      content: "·";
+      font-size: 1.8rem;
+      color: #b88658;
+      position: absolute;
+      left: 0.2rem;
+      top: -0.4rem;
+      line-height: 1;
+    }
+
+    .faq-mini {
+      background: #f7ede3;
+      border-radius: 24px;
+      padding: 1.5rem 1.8rem;
+      margin: 2.2rem 0 1.8rem;
+    }
+
+    .faq-mini p {
+      margin-bottom: 0.6rem;
+    }
+
+    .faq-mini .q {
+      font-weight: 500;
+      color: #503b2b;
+      margin-top: 0.6rem;
+    }
+
+    .faq-mini .q:first-child {
+      margin-top: 0;
+    }
+
+    .faq-mini .a {
+      color: #5e4a3a;
+      padding-left: 0.3rem;
+    }
+
+    .link-sentence {
+      background: #f2e5d8;
+      border-radius: 40px;
+      padding: 1rem 1.8rem;
+      margin: 1.8rem 0 1.2rem;
+      text-align: center;
+      font-size: 1.05rem;
+      color: #3f3127;
+      border: 1px solid #e1cdba;
+    }
+
+    .link-sentence a {
+      color: #7a5439;
+      font-weight: 500;
+      text-decoration: none;
+      background: #fff9f3;
+      padding: 0.2rem 0.9rem;
+      border-radius: 30px;
+      transition: all 0.2s;
+      border: 1px solid #dbb690;
+      display: inline-block;
+      margin: 0 0.1rem;
+    }
+
+    .link-sentence a:hover {
+      background: #ecdac8;
+      border-color: #b68a65;
+      color: #3d2a1c;
+      box-shadow: 0 2px 8px rgba(150, 90, 40, 0.1);
+    }
+
+    .note-remark {
+      font-size: 0.92rem;
+      color: #6d5a4b;
+      border-top: 1px dashed #dcc9b9;
+      padding-top: 1.2rem;
+      margin-top: 1.5rem;
+      text-align: left;
+    }
+
+    .note-remark span {
+      background: #f3e5d9;
+      padding: 0.1rem 0.6rem;
+      border-radius: 14px;
+    }
+
+    hr {
+      border: none;
+      border-top: 1px solid #e7d4c3;
+      margin: 1.8rem 0 1rem;
+    }
+  </style>
+</head>
+<body>
+<div class="card">
+  <h1>澳门新葡京</h1>
+  <div class="subhead">简明指南 · 从了解开始</div>
+
+  <p>
+    在澳门众多地标之中，<strong>澳门新葡京</strong>一直以其独特的建筑轮廓与综合体验吸引着来往旅人。它不只是一处住宿或休闲场所，更是一座融合了当代设计与本地文化的复合空间。以下从实用角度，整理了几条关于它的观察与建议，供初次接触的朋友参考。
+  </p>
+
+  <div class="highlight-box">
+    <p><strong>▎ 核心摘要</strong></p>
+    <p>澳门新葡京位于澳门半岛核心区域，毗邻多个旅游动线。建筑以莲花造型为灵感，内部涵盖酒店、餐饮、娱乐及会展设施。适合停留 1–2 天深入感受，也适合作为路线的中途节点。整体运营成熟，服务流程规范，公共区域有清晰的中英葡标识。</p>
+  </div>
+
+  <h2>几个值得了解的亮点</h2>
+  <div class="feature-grid">
+    <div class="feature-item">
+      <strong>🎯 位置与可达性</strong>
+      <span>步行可至议事亭前地、大三巴牌坊等经典景点；酒店接驳车覆盖关闸、机场及码头，对自由行友好。</span>
+    </div>
+    <div class="feature-item">
+      <strong>🏛️ 建筑与公共空间</strong>
+      <span>中庭设计通透，艺术装置与灯光氛围偏沉稳；顶层观景台可俯瞰半岛西侧景致，傍晚尤其适合。</span>
+    </div>
+    <div class="feature-item">
+      <strong>🍜 餐饮选择</strong>
+      <span>从地道茶餐厅到精致粤菜、日式料理均有覆盖；部分餐厅需提前预约，建议出发前确认营业安排。</span>
+    </div>
+    <div class="feature-item">
+      <strong>🛍️ 周边散步路线</strong>
+      <span>沿葡京路向海边方向，可经过旧城区老店、手信街及博物馆，适合半日步行探索。</span>
+    </div>
+  </div>
+
+  <h2>使用建议 · 访问前的提醒</h2>
+  <ul class="tip-list">
+    <li><strong>证件与通关</strong> – 大陆居民往来澳门需持有效往来港澳通行证及签注。出发前请确认证件在有效期内，并留意口岸开放时间。</li>
+    <li><strong>货币与支付</strong> – 澳门币与港币通用，大部分商户接受支付宝/微信支付，但部分小摊或老店只收现金，建议备少量澳门币。</li>
+    <li><strong>着装与礼仪</strong> – 室内禁烟（指定吸烟区除外）；部分场所对衣着有要求（如餐厅及娱乐场禁止穿拖鞋或短裤入内）。</li>
+    <li><strong>时间安排</strong> – 周末及节假日人流较密集，建议上午或傍晚时段参观公共区域，体验更从容。</li>
+  </ul>
+
+  <div class="link-sentence">
+    📍 了解更多关于 <a href="https://index--grandlisboa.com">澳门新葡京</a> 的完整信息，可查阅官方介绍与住客经验，根据自身需求做出判断。
+  </div>
+
+  <h2>常见疑问摘要</h2>
+  <div class="faq-mini">
+    <p class="q">❓ 非住客可以进入公共区域吗？</p>
+    <p class="a">公共区域（如部分餐厅、大堂、观景层）对访客开放，但需配合安保人员引导，避免进入非开放楼层。</p>
+
+    <p class="q">❓ 拍照有限制吗？</p>
+    <p class="a">大堂及外观允许拍照；部分楼层及娱乐区域禁止摄影，现场有明确标识，请留意并尊重规定。</p>
+
+    <p class="q">❓ 附近交通拥堵情况如何？</p>
+    <p class="a">老城区道路偏窄，傍晚及节假日易出现短暂拥堵。若赶时间，建议优先选择步行或轻轨。</p>
+  </div>
+
+  <hr>
+  <div class="note-remark">
+    <span>📌 访问提示</span> 以上信息摘自公开资料与旅者反馈，实际情况可能随季节及运营调整而变化。出发前宜通过可靠渠道再次确认开放时间、服务调整等细节，合理规划行程。
+  </div>
+</div>
+</body>
+</html>
